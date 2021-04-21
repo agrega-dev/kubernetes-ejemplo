@@ -1,6 +1,6 @@
 FROM ubuntu:16.04
 
-MAINTANER Omar Madrid "omadrid@agrega.com"
+MAINTAINER Omar Madrid "omadrid@agrega.com"
 
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
@@ -13,7 +13,7 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
-EXPOSE 8080
+EXPOSE 5000
 
 ENTRYPOINT [ "python" ]
 

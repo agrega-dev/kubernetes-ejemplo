@@ -18,18 +18,10 @@ spec:
     spec:
       containers:
       - name: appdeploy
-        image: apppython
+        image: pythonapp:v3
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
-        volumeMounts:
-        - mountPath: "/data/certs"
-          name: ca-certs
-          readOnly: true
-      volumes:
-      - name: ca-certs
-        secret:
-          secretName: <username>-secret
+        - containerPort: 5000
 ---
 apiVersion: v1
 kind: Service
