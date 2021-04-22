@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: appdeploy
-        image: pythonapp:v3
+        image: pythonapp:v4
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
@@ -31,7 +31,7 @@ metadata:
     app: flask
 spec:
   ports:
-  - port: 8080
+  - port: 5000
     protocol: TCP
     name: flask
   selector:

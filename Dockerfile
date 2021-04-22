@@ -1,17 +1,17 @@
-FROM ubuntu:16.04
+FROM python:3
 
 MAINTAINER Omar Madrid "omadrid@agrega.com"
 
-RUN apt-get update -y && \
-    apt-get install -y python-pip python-dev
+ENV VIRTUAL_ENV=/opt/venv
+RUN python -m venv $VIRTUAL_ENV
+ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-COPY ./requirements.txt /app/requirements.txt
+COPY . /app
 
 WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-COPY . /app
 
 EXPOSE 5000
 
